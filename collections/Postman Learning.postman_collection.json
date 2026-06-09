@@ -16,12 +16,9 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "https://jsonplaceholder.typicode.com/users/1",
-							"protocol": "https",
+							"raw": "{{baseUrl}}/users/1",
 							"host": [
-								"jsonplaceholder",
-								"typicode",
-								"com"
+								"{{baseUrl}}"
 							],
 							"path": [
 								"users",
@@ -52,12 +49,9 @@
 							}
 						},
 						"url": {
-							"raw": "https://jsonplaceholder.typicode.com/users/1",
-							"protocol": "https",
+							"raw": "{{baseUrl}}/users/1",
 							"host": [
-								"jsonplaceholder",
-								"typicode",
-								"com"
+								"{{baseUrl}}"
 							],
 							"path": [
 								"users",
@@ -78,12 +72,9 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://jsonplaceholder.typicode.com/users/1",
-							"protocol": "https",
+							"raw": "{{baseUrl}}/users/1",
 							"host": [
-								"jsonplaceholder",
-								"typicode",
-								"com"
+								"{{baseUrl}}"
 							],
 							"path": [
 								"users",
@@ -99,12 +90,9 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://jsonplaceholder.typicode.com/users/99999",
-							"protocol": "https",
+							"raw": "{{baseUrl}}/users/99999",
 							"host": [
-								"jsonplaceholder",
-								"typicode",
-								"com"
+								"{{baseUrl}}"
 							],
 							"path": [
 								"users",
@@ -125,12 +113,9 @@
 						"method": "HEAD",
 						"header": [],
 						"url": {
-							"raw": "https://jsonplaceholder.typicode.com/users/1",
-							"protocol": "https",
+							"raw": "{{baseUrl}}/users/1",
 							"host": [
-								"jsonplaceholder",
-								"typicode",
-								"com"
+								"{{baseUrl}}"
 							],
 							"path": [
 								"users",
@@ -146,12 +131,9 @@
 						"method": "OPTIONS",
 						"header": [],
 						"url": {
-							"raw": "https://jsonplaceholder.typicode.com/users",
-							"protocol": "https",
+							"raw": "{{baseUrl}}/users",
 							"host": [
-								"jsonplaceholder",
-								"typicode",
-								"com"
+								"{{baseUrl}}"
 							],
 							"path": [
 								"users"
@@ -177,12 +159,9 @@
 							}
 						],
 						"url": {
-							"raw": "https://jsonplaceholder.typicode.com/users",
-							"protocol": "https",
+							"raw": "{{baseUrl}}/users",
 							"host": [
-								"jsonplaceholder",
-								"typicode",
-								"com"
+								"{{baseUrl}}"
 							],
 							"path": [
 								"users"
@@ -217,12 +196,9 @@
 							}
 						},
 						"url": {
-							"raw": "https://jsonplaceholder.typicode.com/users",
-							"protocol": "https",
+							"raw": "{{baseUrl}}/users",
 							"host": [
-								"jsonplaceholder",
-								"typicode",
-								"com"
+								"{{baseUrl}}"
 							],
 							"path": [
 								"users"
@@ -232,144 +208,37 @@
 					"response": []
 				}
 			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
 		},
 		{
-			"name": "Get Users",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "https://jsonplaceholder.typicode.com/users",
-					"protocol": "https",
-					"host": [
-						"jsonplaceholder",
-						"typicode",
-						"com"
-					],
-					"path": [
-						"users"
-					]
-				}
-			},
-			"response": []
-		},
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
 		{
-			"name": "Get User By ID",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "https://jsonplaceholder.typicode.com/users/1",
-					"protocol": "https",
-					"host": [
-						"jsonplaceholder",
-						"typicode",
-						"com"
-					],
-					"path": [
-						"users",
-						"1"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Get Posts By Users",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "https://jsonplaceholder.typicode.com/posts?userId=1",
-					"protocol": "https",
-					"host": [
-						"jsonplaceholder",
-						"typicode",
-						"com"
-					],
-					"path": [
-						"posts"
-					],
-					"query": [
-						{
-							"key": "userId",
-							"value": "1"
-						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Create User",
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json",
-						"type": "text"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n  \"name\": \"Mohit Waghmare\",\r\n  \"username\": \"mohitw\",\r\n  \"email\": \"mohit@example.com\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "https://jsonplaceholder.typicode.com/users",
-					"protocol": "https",
-					"host": [
-						"jsonplaceholder",
-						"typicode",
-						"com"
-					],
-					"path": [
-						"users"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Update User",
-			"request": {
-				"method": "PUT",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json",
-						"type": "text"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n  \"id\": 1,\r\n  \"name\": \"Mohit Waghmare\",\r\n  \"username\": \"mohit_updated\",\r\n  \"email\": \"mohit.updated@example.com\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "https://jsonplaceholder.typicode.com/users/1",
-					"protocol": "https",
-					"host": [
-						"jsonplaceholder",
-						"typicode",
-						"com"
-					],
-					"path": [
-						"users",
-						"1"
-					]
-				}
-			},
-			"response": []
+			"key": "baseUrl",
+			"value": "",
+			"type": "default"
 		}
 	]
 }
