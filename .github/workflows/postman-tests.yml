@@ -1,23 +1,32 @@
+# Workflow name shown in GitHub Actions tab
 name: Postman API Tests
 
+# Trigger workflow whenever code is pushed to main branch
 on:
   push:
     branches:
       - main
 
 jobs:
+
+  # Job name
   run-postman-tests:
 
+    # GitHub runner OS
     runs-on: ubuntu-latest
 
     steps:
 
+      # Step 1: Download repository code to runner
       - name: Checkout Repository
         uses: actions/checkout@v4
 
+      # Step 2: Install Newman globally
       - name: Install Newman
         run: npm install -g newman
 
+      # Step 3: Execute Postman collection using Development environment
       - name: Run Postman Collection
         run: |
-          newman run "collections/Postman Learning.postman_collection.json" -e "environments/Development.postman_environment.json"
+          newman run "collections/Postman Learning.postman_collection.json" \
+          -e "environments/Development.postman_environment.json"
