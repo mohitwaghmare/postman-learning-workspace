@@ -1,0 +1,121 @@
+# Lesson 26 - Data Driven Testing
+
+## Objective
+
+Learn how to execute the same API request multiple times using different input data from external files.
+
+## What is Data Driven Testing?
+
+Data Driven Testing (DDT) is a testing approach where test data is separated from test logic.
+
+Instead of creating multiple requests, the same request is executed multiple times using different data values.
+
+## Why Use Data Driven Testing?
+
+Without DDT:
+
+```text
+Get User 1
+Get User 2
+Get User 3
+Get User 4
+Get User 5
+```
+
+Many duplicate requests.
+
+With DDT:
+
+```text
+One Request
+      ↓
+Multiple Data Rows
+      ↓
+Multiple Executions
+```
+
+## Example
+
+Request:
+
+```http
+GET /users/{{userId}}
+```
+
+CSV Data:
+
+```csv
+userId
+1
+2
+3
+4
+5
+```
+
+Execution:
+
+```text
+/users/1
+/users/2
+/users/3
+/users/4
+/users/5
+```
+
+## Benefits
+
+* Reduced duplication
+* Easier maintenance
+* Better coverage
+* Reusable test logic
+
+## Supported File Types
+
+### CSV
+
+```csv
+userId
+1
+2
+3
+```
+
+### JSON
+
+```json
+[
+  { "userId": 1 },
+  { "userId": 2 },
+  { "userId": 3 }
+]
+```
+
+## Accessing Data
+
+Postman provides:
+
+```javascript
+pm.iterationData.get("userId");
+```
+
+Example:
+
+```javascript
+const userId = pm.iterationData.get("userId");
+```
+
+## Common QA Use Cases
+
+* User validation
+* Login testing
+* Search testing
+* API parameter coverage
+* Bulk execution
+
+## My Learning
+
+* Data Driven Testing separates data from test logic.
+* CSV and JSON files can drive execution.
+* One request can execute many times.
+* DDT improves automation efficiency.
